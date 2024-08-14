@@ -1,0 +1,74 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "matrix_to_coo"
+description = "Function that converts a numpy matrix to a coordinate list (COO) dictionary."
+authors = [{ name = "Scott E. Boyce", email = "Boyce@engineer.com" }]
+maintainers = [{ name = "Scott E. Boyce", email = "Boyce@engineer.com" }]
+license = { text = "MIT" }
+requires-python = ">=3.8,<4"
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+lint = ["ruff"]
+
+[project.urls]
+"Homepage" = "https://github.com/ScottBoyce-Python/matrix_to_coo"
+"Source Code" = "https://github.com/ScottBoyce-Python/matrix_to_coo"
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
+
+[tool.setuptools]
+packages = ["matrix_to_coo"]
+include-package-data = true
+
+[tool.setuptools.dynamic]
+version = { attr = "matrix_to_coo.__init__.__version__" }
+
+[tool.black]
+target-version = ['py39']
+line-length = 120
+
+[tool.ruff]
+target-version = "py39"
+line-length = 120
+indent-width = 4
+
+exclude = [
+  ".eggs",
+  ".git",
+  "_build",
+  "build",
+  "dist",
+  "htmlcov",
+  "vulture.egg-info",
+  ".cache",
+  ".coverage",
+  ".pytest_cache",
+  ".tox",
+  ".venv",
+  ".vscode",
+]
+
+[tool.ruff.format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+# Use `\n` line endings for all files
+line-ending = "lf"
+
